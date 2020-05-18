@@ -1,0 +1,103 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2659556 on Fri Sep 13 13:40:48 MDT 2019
+# IP Build 2659256 on Fri Sep 13 16:37:13 MDT 2019
+# Start of session at: Sat May  9 00:48:38 2020
+# Process ID: 17967
+# Current directory: /d1/gaohm/dpdk/dpdk-20.02
+# Command line: vivado
+# Log file: /d1/gaohm/dpdk/dpdk-20.02/vivado.log
+# Journal file: /d1/gaohm/dpdk/dpdk-20.02/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_hw_manager
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/d1/opt/Vivado/2019.2/data/ip'.
+open_hw_manager: Time (s): cpu = 00:00:16 ; elapsed = 00:00:07 . Memory (MB): peak = 6716.648 ; gain = 159.316 ; free physical = 82923 ; free virtual = 88242
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.2
+  **** Build date : Sep 13 2019 at 14:19:20
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+[?1034h
+
+****** Xilinx cs_server v2019.2.0
+  **** Build date : Sep 13 2019-17:01:18
+    ** Copyright 2017-2019 Xilinx, Inc. All Rights Reserved.
+
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/500202A20L2AA
+current_hw_device [get_hw_devices xcu50_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xcu50_0] 0]
+INFO: [Labtools 27-2302] Device xcu50 (JTAG device index = 0) is programmed with a design that has 4 ILA core(s).
+INFO: [Labtools 27-2302] Device xcu50 (JTAG device index = 0) is programmed with a design that has 3 VIO core(s).
+refresh_hw_device: Time (s): cpu = 00:00:27 ; elapsed = 00:00:11 . Memory (MB): peak = 7866.961 ; gain = 63.961 ; free physical = 81689 ; free virtual = 87030
+set_property PROBES.FILE {/d1/gaohm/virtio/debug/columbia_u50_04160930_e50_with_ila/top_columbia.ltx} [get_hw_devices xcu50_0]
+set_property FULL_PROBES.FILE {/d1/gaohm/virtio/debug/columbia_u50_04160930_e50_with_ila/top_columbia.ltx} [get_hw_devices xcu50_0]
+set_property PROGRAM.FILE {/d1/gaohm/virtio/debug/columbia_u50_04160930_e50_with_ila/top_columbia.bit} [get_hw_devices xcu50_0]
+program_hw_devices [get_hw_devices xcu50_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 7873.188 ; gain = 0.000 ; free physical = 81687 ; free virtual = 87057
+refresh_hw_device [lindex [get_hw_devices xcu50_0] 0]
+INFO: [Labtools 27-2302] Device xcu50 (JTAG device index = 0) is programmed with a design that has 4 ILA core(s).
+INFO: [Labtools 27-2302] Device xcu50 (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_rx_0"}]]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_2 -of_objects [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_rx_1"}]]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_3 -of_objects [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_tx_0"}]]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_4 -of_objects [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_tx_1"}]]
+set_property OUTPUT_VALUE 2 [get_hw_probes eth_mac_inst/gt_loopback -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+commit_hw_vio [get_hw_probes {eth_mac_inst/gt_loopback} -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+set_property OUTPUT_VALUE 0 [get_hw_probes eth_mac_inst/gt_loopback -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+commit_hw_vio [get_hw_probes {eth_mac_inst/gt_loopback} -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+set_property OUTPUT_VALUE 1 [get_hw_probes eth_mac_inst/eth0_rx_reset -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+commit_hw_vio [get_hw_probes {eth_mac_inst/eth0_rx_reset} -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+set_property OUTPUT_VALUE 0 [get_hw_probes eth_mac_inst/eth0_rx_reset -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+commit_hw_vio [get_hw_probes {eth_mac_inst/eth0_rx_reset} -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+set_property OUTPUT_VALUE 1 [get_hw_probes eth_mac_inst/eth1_rx_reset -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+commit_hw_vio [get_hw_probes {eth_mac_inst/eth1_rx_reset} -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+set_property OUTPUT_VALUE 0 [get_hw_probes eth_mac_inst/eth1_rx_reset -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+commit_hw_vio [get_hw_probes {eth_mac_inst/eth1_rx_reset} -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+set_property OUTPUT_VALUE 1 [get_hw_probes eth_mac_inst/eth0_tx_reset -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+commit_hw_vio [get_hw_probes {eth_mac_inst/eth0_tx_reset} -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+set_property OUTPUT_VALUE 0 [get_hw_probes eth_mac_inst/eth0_tx_reset -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+commit_hw_vio [get_hw_probes {eth_mac_inst/eth0_tx_reset} -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+set_property OUTPUT_VALUE 1 [get_hw_probes eth_mac_inst/eth1_tx_reset -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+commit_hw_vio [get_hw_probes {eth_mac_inst/eth1_tx_reset} -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+set_property OUTPUT_VALUE 0 [get_hw_probes eth_mac_inst/eth1_tx_reset -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+commit_hw_vio [get_hw_probes {eth_mac_inst/eth1_tx_reset} -of_objects [get_hw_vios -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/e50_vio_gt_ctrl_inst"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_rx_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-May-09 00:55:42
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_rx_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_rx_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-May-09 00:55:42
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /d1/gaohm/dpdk/dpdk-20.02/.Xil/Vivado-17967-localhost.localdomain/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_rx_1"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2020-May-09 00:55:46
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_rx_1"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_rx_1"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2020-May-09 00:55:46
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /d1/gaohm/dpdk/dpdk-20.02/.Xil/Vivado-17967-localhost.localdomain/backup/hw_ila_data_2.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_tx_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_3' trigger was armed at 2020-May-09 00:55:49
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_tx_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_tx_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_3' triggered at 2020-May-09 00:55:49
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /d1/gaohm/dpdk/dpdk-20.02/.Xil/Vivado-17967-localhost.localdomain/backup/hw_ila_data_3.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_tx_1"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_4' trigger was armed at 2020-May-09 00:55:52
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_tx_1"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu50_0] -filter {CELL_NAME=~"eth_mac_inst/ila_e50_tx_1"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_4' triggered at 2020-May-09 00:55:52
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /d1/gaohm/dpdk/dpdk-20.02/.Xil/Vivado-17967-localhost.localdomain/backup/hw_ila_data_4.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.

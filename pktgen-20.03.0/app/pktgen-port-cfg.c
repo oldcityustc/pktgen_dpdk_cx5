@@ -301,6 +301,7 @@ pktgen_config_ports(void)
 			conf.rxmode.max_rx_pkt_len = pktgen.eth_max_pkt;
 			conf.rxmode.offloads |= DEV_RX_OFFLOAD_JUMBO_FRAME;
 			conf.txmode.offloads |= DEV_TX_OFFLOAD_MULTI_SEGS;
+			conf.rxmode.offloads |= DEV_RX_OFFLOAD_SCATTER;
 		}
 		if (info->dev_info.tx_offload_capa & DEV_TX_OFFLOAD_MBUF_FAST_FREE)
 			conf.txmode.offloads |= DEV_TX_OFFLOAD_MBUF_FAST_FREE;

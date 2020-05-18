@@ -363,7 +363,7 @@ CONFIG_RTE_LIBRTE_MLX4_DEBUG=n
 # Compile burst-oriented Mellanox ConnectX-4, ConnectX-5,
 # ConnectX-6 & BlueField (MLX5) PMD
 #
-CONFIG_RTE_LIBRTE_MLX5_PMD=n
+CONFIG_RTE_LIBRTE_MLX5_PMD=y
 CONFIG_RTE_LIBRTE_MLX5_DEBUG=n
 
 #
@@ -527,7 +527,7 @@ CONFIG_RTE_LIBRTE_PMD_NULL=y
 #
 # Compile software PMD backed by PCAP files
 #
-CONFIG_RTE_LIBRTE_PMD_PCAP=n
+CONFIG_RTE_LIBRTE_PMD_PCAP=y
 
 #
 # Compile example software rings based PMD

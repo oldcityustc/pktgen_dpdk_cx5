@@ -146,7 +146,7 @@ disable 0 capture
 
 ## System requirements
 
-hugepage support for ubuntu:
+### hugepage support for ubuntu:
 
 vim /etc/default/grub
 
@@ -165,11 +165,71 @@ GRUB_DISABLE_RECOVERY="true"
 sudo update-grub
 ```
 
-backup:
+### GRUB:
 
 ```shell
 #grub2-mkconfig -o /boot/grub2/grub.cfg
 grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
 grub2-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg
+```
+
+### LUA
+
+download lua
+http://www.lua.org/ftp/
+
+install lua
+
+```shell
+make linux
+sudo make install
+make local
+```
+
+### libpcap
+
+Below error you can solve through install libpcap-dev.(-dev package will install head files.)
+
+```
+/home/xilinx/pktgen/pktgen-20.03.0/app/pktgen-port-cfg.h:19:23: fatal error: pcap/pcap.h: No such file or directory
+```
+
+```
+sudo apt install libpcap-dev
+```
+
+### libtinfo
+
+Below error you can solve through install libtinfo-dev
+
+```
+lua.c:82:31: fatal error: readline/readline.h: No such file or directory
+```
+
+```
+sudo apt install libtinfo-dev
+```
+
+### libnuma
+
+```
+apt install libnuma-dev
+```
+
+### GCC version
+
+latest GCC version is 7+ after install build-seeential.  need to downgrade to 5.
+
+```shell
+sudo apt install build-essential
+
+sudo apt-get install gcc-5
+
+cd /usr/bin/
+ll gcc
+
+sudo rm gcc
+sudo ln -s gcc-5 gcc
+gcc -v
 ```
 

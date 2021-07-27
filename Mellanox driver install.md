@@ -27,6 +27,7 @@ mlx5_0 port 1 ==> ens801f0 (Up)
 
 mlx5_1 port 1 ==> ens801f0 (Up)
 
+# Useful Mlxlink CMDs
 
 ### sudo mlxlink -d d9:00.0 --fec RS --fec_speed 100G
 ### sudo mlxlink -d d9:00.1 --fec RS --fec_speed 100G

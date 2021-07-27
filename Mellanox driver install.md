@@ -5,7 +5,7 @@
 ### 3, 初始安装后，默认会是“Infiniband controller: Mellanox Technologies”，需要切换到ethnet，参考如下链接
 ### 4，“https://community.mellanox.com/s/article/getting-started-with-connectx-5-100gb-s-adapters-for-linux”
 
-
+# Infiniband Controller convert to Ethernet Controller
 ## a. Start MFT.
 $ mst start
 ## b. Extract the vendor_part_id parameter.

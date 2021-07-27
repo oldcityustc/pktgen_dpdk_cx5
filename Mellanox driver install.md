@@ -6,16 +6,16 @@
 ###4，“https://community.mellanox.com/s/article/getting-started-with-connectx-5-100gb-s-adapters-for-linux”
 
 
-# a. Start MFT.
+## a. Start MFT.
 $ mst start
-# b. Extract the vendor_part_id parameter.
+## b. Extract the vendor_part_id parameter.
 $ ibv_devinfo | grep vendor_part_id
-# c. Query the Host about ConnectX-4 adapters:
+## c. Query the Host about ConnectX-4 adapters:
 $ mlxconfig -d /dev/mst/mt4119_pciconf0 q
 Note that the LINK_TYPE_P1 and LINK_TYPE_P2 equal 1 (InfiniBand) by default.
-# d. Change the port type to Ethernet (LINK_TYPE = 2):
+## d. Change the port type to Ethernet (LINK_TYPE = 2):
 $mlxconfig -d /dev/mst/mt4119_pciconf0 set LINK_TYPE_P1=2 LINK_TYPE_P2=2
-# e. Reboot the server.
+## e. Reboot the server.
 
 
 $ ifconfig ens801f0 15.15.15.5/24 up

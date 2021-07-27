@@ -1,3 +1,5 @@
+
+
 1, download from here "https://www.mellanox.com/products/infiniband-drivers/linux/mlnx_ofed"
 2, install "./mlnxofedinstall"
 3, 初始安装后，默认会是“Infiniband controller: Mellanox Technologies”，需要切换到ethnet，参考如下链接
@@ -24,3 +26,12 @@ e. Reboot the server.
 mlx5_0 port 1 ==> ens801f0 (Up)
 
 mlx5_1 port 1 ==> ens801f0 (Up)
+
+
+sudo mlxlink -d d9:00.0 --fec RS --fec_speed 100G
+sudo mlxlink -d d9:00.1 --fec RS --fec_speed 100G
+sudo ethtool -s p6p1 speed 100000 autoneg off
+sudo ethtool -s p6p2 speed 100000 autoneg off
+
+sudo mlxlink -d d9:00.0
+sudo mlxlink -d d9:00.1
